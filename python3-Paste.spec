@@ -17,7 +17,7 @@ URL:		https://pypi.org/project/Paste/
 BuildRequires:	python3-devel >= 1:3.6
 BuildRequires:	python3-setuptools >= 0.6-0.a9.1
 %if %{with tests}
-BuildRequires:	python3-nose >= 0.11
+BuildRequires:	python3-pytest
 BuildRequires:	python3-six >= 1.4.0
 %endif
 %if %{with doc}
@@ -66,7 +66,6 @@ PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 PYTHONPATH=$(pwd) \
 %{__python3} -m pytest tests
 %endif
-# %{?with_tests:test}
 
 %if %{with doc}
 sphinx-build-3 -b html docs docs/_build/html
