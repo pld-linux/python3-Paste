@@ -6,13 +6,13 @@
 Summary:	Tools for using a Web Server Gateway Interface stack
 Summary(pl.UTF-8):	Narzędzia do używania stosu Web Server Gateway Interface
 Name:		python3-Paste
-Version:	3.7.1
+Version:	3.10.1
 Release:	1
 Group:		Libraries/Python
 License:	MIT
 #Source0Download: https://pypi.org/simple/paste/
-Source0:	https://files.pythonhosted.org/packages/source/P/Paste/Paste-%{version}.tar.gz
-# Source0-md5:	0e2eb782f92b59412f68808b5a38b7dc
+Source0:	https://files.pythonhosted.org/packages/source/P/Paste/paste-%{version}.tar.gz
+# Source0-md5:	7d59952c9e108d8d381944b40e90e47a
 URL:		https://pypi.org/project/Paste/
 BuildRequires:	python3-devel >= 1:3.6
 BuildRequires:	python3-setuptools >= 0.6-0.a9.1
@@ -53,7 +53,7 @@ API documentation for Python Paste module.
 Dokumentacja API modułu Pythona Paste.
 
 %prep
-%setup -q -n Paste-%{version}
+%setup -q -n paste-%{version}
 
 # online test + requires outdated pythonpaste.org website content
 %{__rm} tests/test_proxy.py
