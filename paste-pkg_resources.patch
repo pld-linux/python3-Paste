@@ -1,0 +1,11 @@
+setuptools 80 promoted pkg_resources warning to UserWarning
+--- paste-3.10.1/tests/cgiapp_data/form.cgi.orig	2024-05-01 13:31:26.000000000 +0200
++++ paste-3.10.1/tests/cgiapp_data/form.cgi	2025-11-04 21:30:32.956406183 +0100
+@@ -12,6 +12,7 @@ sys.path.insert(0, base_dir)
+ 
+ with warnings.catch_warnings():
+     warnings.simplefilter("ignore", category=DeprecationWarning)
++    warnings.simplefilter("ignore", category=UserWarning)
+     try:
+         import pkg_resources
+     except ImportError:

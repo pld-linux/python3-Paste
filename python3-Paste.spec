@@ -13,15 +13,15 @@ License:	MIT
 #Source0Download: https://pypi.org/simple/paste/
 Source0:	https://files.pythonhosted.org/packages/source/P/Paste/paste-%{version}.tar.gz
 # Source0-md5:	7d59952c9e108d8d381944b40e90e47a
+Patch0:		paste-pkg_resources.patch
 URL:		https://pypi.org/project/Paste/
 BuildRequires:	python3-devel >= 1:3.6
 BuildRequires:	python3-setuptools >= 0.6-0.a9.1
 %if %{with tests}
 BuildRequires:	python3-pytest
-BuildRequires:	python3-six >= 1.4.0
 %endif
 %if %{with doc}
-BuildRequires:	sphinx-pdg
+BuildRequires:	sphinx-pdg-3
 %endif
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
@@ -54,6 +54,7 @@ Dokumentacja API modułu Pythona Paste.
 
 %prep
 %setup -q -n paste-%{version}
+%patch -P0 -p1
 
 # online test + requires outdated pythonpaste.org website content
 %{__rm} tests/test_proxy.py
@@ -81,7 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.rst docs/{license,news}.txt
+%doc LICENSE README.rst docs/news.txt
 # paste is also top dir for other python3-Paste* packages
 %dir %{py3_sitescriptdir}/paste
 %{py3_sitescriptdir}/paste/auth
